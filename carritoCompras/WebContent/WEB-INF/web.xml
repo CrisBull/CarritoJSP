@@ -19,4 +19,14 @@
     <servlet-name>Controller</servlet-name>
     <url-pattern>/Controller</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description>insertar campos de registro</description>
+    <display-name>insertar</display-name>
+    <servlet-name>insertar</servlet-name>
+    <servlet-class>carritoCompras.controller.insertar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertar</servlet-name>
+    <url-pattern>/insertar</url-pattern>
+  </servlet-mapping>
 </web-app>

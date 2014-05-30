@@ -9,14 +9,14 @@
 <body>
 	<center><h1>Nuevo Usuario</h1></center>
 	<form method="POST" action='loggin.jsp' name="iniciar sesion">
-		<center>Nombre de Usuario<input type="text" name="User"/> <br>
+		<center>Nombre de Usuario<input type="text" name="user"/> <br>
 		<br>
-		Contraseña<input type="text" name="password" />
+		Contraseña<input type="password" name="password" />
 		<br>
-		Confirmar Contraseña<input type="text" name="password" />
+		Confirmar Contraseña<input type="password" name="rpassword" />
 		<br>
 		<br>
-		<input type="submit" name="enviar registro" value="Enviar"/>&nbsp;
+		<input type="submit"  value="Enviar"/>&nbsp;
 		
 			</form>
 	<form method="post" action="index.html" name="cancelar">
