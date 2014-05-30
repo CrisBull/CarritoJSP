@@ -29,4 +29,14 @@
     <servlet-name>insertar</servlet-name>
     <url-pattern>/insertar</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Insertar</display-name>
+    <servlet-name>Insertar</servlet-name>
+    <servlet-class>carritoCompras.db.Insertar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Insertar</servlet-name>
+    <url-pattern>/Insertar</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -14,7 +14,7 @@
 
 	//Database credentials
 	final String USER = "root";
-	final String PASS = "root";
+	final String PASS = "admin";
 	
 	String userLocal = request.getParameter("User");
 	String passLocal = request.getParameter("password");
@@ -39,15 +39,14 @@
 		sql = "SELECT * from users where usuario='" + userLocal + "' and pass='" + passLocal + "'";
 		ResultSet rs = stmt.executeQuery(sql);
 		if(!rs.wasNull()){
-			
 			//out.println("Entra a null");
 		//STEP 5: extraer los datos del result set
 		//while(rs.next()){
 		//buscando por nombre del campo
 		//int id = rs.getInt("id");
-			//user = rs.getString("usuario");
-			//pass = rs.getString("pass");
-		response.sendRedirect("principal.jsp");
+			user = rs.getString("usuario");
+			pass = rs.getString("pass");
+		//response.sendRedirect("principal.jsp");
 		//}
 		}
 		if(user == null){

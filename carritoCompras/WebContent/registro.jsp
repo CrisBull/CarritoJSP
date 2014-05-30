@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center><h1>Nuevo Usuario</h1></center>
-	<form method="POST" action='loggin.jsp' name="iniciar sesion">
+	<form method="POST" action="Insertar" name="iniciar sesion">
 		<center>Nombre de Usuario<input type="text" name="user"/> <br>
 		<br>
 		Contraseña<input type="password" name="password" />
