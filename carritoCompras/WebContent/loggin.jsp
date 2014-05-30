@@ -14,7 +14,7 @@
 
 	//Database credentials
 	final String USER = "root";
-	final String PASS = "admin";
+	final String PASS = "root";
 	
 	String userLocal = request.getParameter("User");
 	String passLocal = request.getParameter("password");
@@ -62,7 +62,7 @@
 		conn.close();
 		}catch(SQLException se){
 		//Controlando los errores for JDBC
-		out.println("Error de SQL!");
+		out.println("Error de SQL! <br> " + se);
 		se.printStackTrace();
 		}catch(Exception ie2){
 		out.println("Error de otra madre!");
