@@ -8,6 +8,7 @@
 </head>
 <body>
 <%
+out.println("Bienvenido");
 out.println("Sesion ID"+ session.getId() + "<br>");
 out.println("Tiempo de creación: "+ new Date(session.getCreationTime()) + "<br>");
 out.println("Utimo Acceso: "+ new Date(session.getLastAccessedTime()) + "<br>");
