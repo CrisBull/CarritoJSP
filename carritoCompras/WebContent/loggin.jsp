@@ -8,7 +8,8 @@
 </head>
 <body>
 <%
-	out.println("Bienvenido");
+	out.println("Bienvenido de nuevo");
+	
 
 %>
 </body>
