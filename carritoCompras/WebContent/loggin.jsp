@@ -49,10 +49,33 @@
 				user = rs.getString("usuario");
 				pass = rs.getString("pass");
 				response.sendRedirect("principal.jsp");
+				
+				session = request.getSession(true);
+				// Get session creation time.
+					Date createTime = new Date(session.getCreationTime());
+				// Get last access time of this web page.
+					Date lastAccessTime = 
+					new Date(session.getLastAccessedTime());
+					String userIDKey = new String("userID");
+					//String userID = new String("ABCD");
+					String userID = user;;
+				// Verificar si ya vino o no
+					//try{
+					session.setAttribute(userIDKey, userID);
+					/*if (session.isNew()){
+						session.setAttribute(userIDKey, userID);
+					}else{
+						userID = (String)session.getAttribute(userIDKey);
+					}
+					*/
+					//}
+					//catch(Exception e){}
+				//session.	
 			}
 		}
 		if(user == null){
 			///response.sendRedirect("index.html");
+			session.invalidate();
 			rs.close();
 			stmt.close();
 			conn.close();
