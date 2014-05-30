@@ -18,6 +18,7 @@
 	
 	String userLocal = request.getParameter("User");
 	String passLocal = request.getParameter("password");
+	String user = null, pass = null;
 	
 	Connection conn = null;
 	Statement stmt = null;
@@ -37,21 +38,24 @@
 		String sql;
 		sql = "SELECT * from users where usuario='" + userLocal + "' and pass='" + passLocal + "'";
 		ResultSet rs = stmt.executeQuery(sql);
-		if(rs.wasNull()){
+		if(!rs.wasNull()){
 			
 			//out.println("Entra a null");
 		//STEP 5: extraer los datos del result set
-		while(rs.next()){
+		//while(rs.next()){
 		//buscando por nombre del campo
 		//int id = rs.getInt("id");
-			out.println("Entra a while");
-			String user = rs.getString("usuario");
-			String password = rs.getString("pass");
+			//user = rs.getString("usuario");
+			//pass = rs.getString("pass");
+		response.sendRedirect("principal.jsp");
+		//}
 		}
-		}
-		else {
+		if(user == null){
 			///response.sendRedirect("index.html");
-			out.println("algo pasa aqui");
+			rs.close();
+			stmt.close();
+			conn.close();
+			response.sendRedirect("index.html");
 		}
 		//STEP 6: limpiando el entorno
 		rs.close();
