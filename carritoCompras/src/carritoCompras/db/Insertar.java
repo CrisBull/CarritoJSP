@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 //import java.util.Map;
@@ -31,12 +31,12 @@ static final String DB_URL = "jdbc:mysql://localhost:3306/compras";
 
 // Database credentials
 static final String USER = "root";
-static final String PASS = "admin";
+static final String PASS = "root";
 
 public void init() throws ServletException
 {
 // Do required initialization
-message = "Estableciendo Conexi�n a base de datos";
+message = "Estableciendo Conexión al Servidor";
 }
 
 public void doPost(HttpServletRequest request,
@@ -54,8 +54,8 @@ try{
 //STEP 2: Registrar el driver JDBC
 Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-//STEP 3: Abrir la conexi�n
-out.println("<h1> Conectado a la base de datos </h1>");
+//STEP 3: Abrir la conexión
+out.println("<h1> Conexion Exitosa!!! </h1>");
 conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
 //STEP 4: Ejecutando un query sql
@@ -66,9 +66,10 @@ String contraseña = request.getParameter("password");
 String rcontraseña = request.getParameter("rpassword");
 String sql;
 
-if(contraseña == rcontraseña){
+if(contraseña.equals(rcontraseña)){
 	
-	out.println("Registro Insertado " + nombre + " " + contraseña + " " + rcontraseña);
+	out.println("Usuario Registrado Felicidades" + " " +nombre);
+	out.println("<form method=\"POST\" action='principal.jsp' name=\"con\"><input type=\"submit\"  value=\"Continuar\"/>&nbsp;</form>");
 	sql = ("insert into users (usuario,pass) values('"+nombre+"','"+contraseña+"')");
 	//ResultSet rs = stmt.executeQuery(sql);
 	stmt.executeUpdate(sql);
@@ -76,7 +77,7 @@ if(contraseña == rcontraseña){
 }else
 		response.sendRedirect("index.html");
 
-//out.println("<form method=\"POST\" action='Controller' name=\"Consultar�\"><input type=\"submit\" value=\"Regresar\"></form>");
+//out.println("<form method=\"POST\" action='Controller' name=\"Consultar\"><input type=\"submit\" value=\"Regresar\"></form>");
 //STEP 6: limpiando el entorno
 //rs.close();
 stmt.close();

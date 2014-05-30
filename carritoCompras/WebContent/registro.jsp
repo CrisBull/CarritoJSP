@@ -16,11 +16,11 @@
 		Confirmar Contraseña<input type="password" name="rpassword" />
 		<br>
 		<br>
-		<input type="submit"  value="Enviar"/>&nbsp;
+		<input type="submit"  value="Enviar"/>&nbsp;</center>
 		
 			</form>
 	<form method="post" action="index.html" name="cancelar">
-		<input type="submit" name="index.html" value="Cancelar"/>
+		<center><input type="submit" name="index.html" value="Cancelar"/></center>
 		<br>
 	</form>
 
