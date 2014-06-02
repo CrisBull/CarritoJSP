@@ -69,13 +69,13 @@ String sql;
 if(contraseña.equals(rcontraseña)){
 	
 	out.println("Usuario Registrado Felicidades" + " " +nombre);
-	out.println("<form method=\"POST\" action='principal.jsp' name=\"con\"><input type=\"submit\"  value=\"Continuar\"/>&nbsp;</form>");
+	out.println("<form method=\"POST\" action='index.jsp' name=\"con\"><input type=\"submit\"  value=\"Continuar\"/>&nbsp;</form>");
 	sql = ("insert into users (usuario,pass) values('"+nombre+"','"+contraseña+"')");
 	//ResultSet rs = stmt.executeQuery(sql);
 	stmt.executeUpdate(sql);
 	
 }else
-		response.sendRedirect("index.html");
+		response.sendRedirect("index.jsp");
 
 //out.println("<form method=\"POST\" action='Controller' name=\"Consultar\"><input type=\"submit\" value=\"Regresar\"></form>");
 //STEP 6: limpiando el entorno

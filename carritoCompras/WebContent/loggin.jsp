@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Conexion Base</title>
 </head>
 <body>
 <%
@@ -48,8 +48,8 @@
 		//int id = rs.getInt("id");
 				user = rs.getString("usuario");
 				pass = rs.getString("pass");
-				response.sendRedirect("principal.jsp");
 				
+				//session.invalidate();
 				session = request.getSession(true);
 				// Get session creation time.
 					Date createTime = new Date(session.getCreationTime());
@@ -62,6 +62,7 @@
 				// Verificar si ya vino o no
 					//try{
 					session.setAttribute(userIDKey, userID);
+					response.sendRedirect("index.jsp");
 					/*if (session.isNew()){
 						session.setAttribute(userIDKey, userID);
 					}else{
@@ -79,7 +80,7 @@
 			rs.close();
 			stmt.close();
 			conn.close();
-			response.sendRedirect("index.html");
+			response.sendRedirect("iniciarSesion.html");
 		}
 		//STEP 6: limpiando el entorno
 		rs.close();

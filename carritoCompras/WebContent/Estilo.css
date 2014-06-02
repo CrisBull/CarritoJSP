@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+
+.posts{
+	
+	background-color: #748184;
+	width: auto;
+	height: 40em;
+	
+}
+
+.postsCarrito
+{
+	background-color: #748184;
+	width: auto;
+	height: auto;	
+	
+	
+	
+}
+
+body{
+	padding-left: 10%;
+	width: 80%;	
+	
+}
+
+nav
+{
+	background:#4d585c;
+	border-left:15px solid #4d585c;
+	position:relative;
+}
+nav .menu
+{
+	height:40px;
+	line-height:40px;
+	margin:0;
+	padding:0;
+	overflow-x:auto;
+	white-space:nowrap;
+	
+}
+
+nav .menu li
+{
+	display:inline-block;
+	margin:0 .5em;
+	padding:0 .2em;
+	
+}
+nav .menu li a
+{	
+	color:#fff;display:block;
+	margin:0 .5em;
+	padding:0 .2em;
+	text-decoration:none;
+}
+nav .menu li a:hover
+{
+	background:rgba(0,0,0,0.1)
+}
+
+.Catalogo{
+	margin: 0;
+	padding:0;
+	overflow-x:auto;
+	white-space:nowrap;
+	font-style: oblique;
+	font: bold;
+}
+.Catalogo li{
+	display:inline-block;
+	font-size: 1em;
+	margin:0 .5em;
+	padding:0 .5em;
+	margin-left: 1.6em;
+}
+
+.Catalogo img{
+	margin-top: 2em;
+	width: 200px;
+	border: 5;
+	border-right:10px solid #4d585c;
+	
+	
+}
