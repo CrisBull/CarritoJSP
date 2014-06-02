@@ -10,8 +10,12 @@
 <body>
 	<header>
 		<div id="encabezado" class="Encabezado">
-		
-		
+			<table>
+				<td><a href= "index.jsp"> <img alt="logo" src="img/logo.png"> </a></td>
+				<td><center><h1>W o l f S t o r e</h1></center></td>
+			</table>
+				
+			
 		</div>
 	</header>
 	
@@ -23,7 +27,8 @@
 		<li><a href="Musica.jsp">Musica</a></li>
 		<li><a href="videogames.jsp">Video Games</a></li>
 		<li><a href="Carrito.jsp">Carrito de Compras</a></li>
-		<% 
+					
+		<% //Definimos si la session esta en curso para desplegar opciones de registro e iniciar sesion
 			if(session.getAttribute("userID") == null){
 				out.print("<li><a href=\"iniciarSesion.html\">Iniciar Session</a></li> ");
 				out.print("<li><a href=\"registro.jsp\">Registrarse</a></li>");
@@ -71,9 +76,10 @@
 	<p>Precio: $320</p>
 	<a href="addCarrito.jsp?productoKey=pelicula4&producto=Iron Man&precio=320&creador=Marvel Comics&productor=Century Fox&descripcion=Pelicula" class="Carrito">Agregar a Carrito</a>
 	</li>
+	<br><br>
 	
+	</ul>
 	
-		</ul>
 	</article>
 	</section>
 

@@ -10,7 +10,11 @@
 <body>
 	<header>
 		<div id="encabezado" class="Encabezado">
-		
+			<table>
+				<td><a href= "index.jsp"> <img alt="logo" src="img/logo.png"> </a></td>
+				<td><center><h1>W o l f S t o r e</h1></center></td>
+			</table>
+				
 		
 		</div>
 	</header>
@@ -70,6 +74,7 @@
 	<p>Precio: $400</p>
 	<a href="addCarrito.jsp?productoKey=residentRevelation&producto=Resident Evil Revelations&precio=400&creador=PS3&productor=+18&descripcion=Tipo: Primera Persona" class="Carrito">Agregar a Carrito</a>
 	</li>
+	<br><br>
 </ul>
 </article>
 </section>

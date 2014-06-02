@@ -36,12 +36,10 @@
 		//System.out.println("Creando la sentencia...");
 		stmt = conn.createStatement();
 		String sql;
-		sql = "SELECT * from users where usuario='" + userLocal + "' and pass='" + passLocal + "'";
-		ResultSet rs = stmt.executeQuery(sql);
+		sql = "SELECT * from users where usuario='" + userLocal + "' and pass='" + passLocal + "'";	//Busca en la base si los campos 
+		ResultSet rs = stmt.executeQuery(sql);														//tienen el registro insertado
 		
 		if(rs != null){
-			//rs.first();
-			//out.println("Entra a null");
 		//STEP 5: extraer los datos del result set
 			while(rs.next()){
 		//buscando por nombre del campo
@@ -49,33 +47,22 @@
 				user = rs.getString("usuario");
 				pass = rs.getString("pass");
 				
-				//session.invalidate();
-				session = request.getSession(true);
+				session = request.getSession(true);		//Crea la sesion
 				// Get session creation time.
 					Date createTime = new Date(session.getCreationTime());
 				// Get last access time of this web page.
 					Date lastAccessTime = 
 					new Date(session.getLastAccessedTime());
 					String userIDKey = new String("userID");
-					//String userID = new String("ABCD");
 					String userID = user;;
 				// Verificar si ya vino o no
 					//try{
-					session.setAttribute(userIDKey, userID);
+					session.setAttribute(userIDKey, userID);	//Define el index en la base y el usuario
 					response.sendRedirect("index.jsp");
-					/*if (session.isNew()){
-						session.setAttribute(userIDKey, userID);
-					}else{
-						userID = (String)session.getAttribute(userIDKey);
-					}
-					*/
-					//}
-					//catch(Exception e){}
-	
+					
 			}
 		}
 		if(user == null){
-			///response.sendRedirect("index.html");
 			session.invalidate();
 			rs.close();
 			stmt.close();

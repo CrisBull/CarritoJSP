@@ -11,8 +11,12 @@
 
 	<header>
 		<div id="encabezado" class="Encabezado">
-		
-		
+			
+			<table>
+				<td><a href= "index.jsp"> <img alt="logo" src="img/logo.png"> </a></td>
+				<td><center><h1>W o l f S t o r e</h1></center></td>
+			</table>
+				
 		</div>
 	</header>
 	
@@ -24,7 +28,10 @@
 		<li><a href="Musica.jsp">Musica</a></li>
 		<li><a href="videogames.jsp">Video Games</a></li>
 		<li><a href="Carrito.jsp">Carrito de Compras</a></li>
+		
+		
 		<% 
+			//Definimos si la session esta en curso para desplegar opciones de registro e iniciar sesion	
 			if(session.getAttribute("userID") == null){
 				out.print("<li><a href=\"iniciarSesion.html\">Iniciar Session</a></li> ");
 				out.print("<li><a href=\"registro.jsp\">Registrarse</a></li>");
@@ -34,6 +41,7 @@
 				out.print("<li><a href=\"cerrarSesion.jsp\"> Cerrar Sesión</a></li>");
 			}
 		%>
+		
 		</ul>
 	</nav>
 	
@@ -68,6 +76,7 @@
 	<p>Precio: $320</p>
 	<a href="addCarrito.jsp?productoKey=libro4&producto=Retrato en sangre&precio=320&creador=John Katzenbach&productor=La Trama&descripcion=Libro de suspenso" class="Carrito">Agregar a Carrito</a>
 	</li>
+	<br><br>
 	</ul>
 	</article>
 	</section>

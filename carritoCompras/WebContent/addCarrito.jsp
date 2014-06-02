@@ -20,8 +20,8 @@
 	String descripcion = request.getParameter("descripcion").toString();
 	
 	
-	if(session.getAttribute(productoKey) == null){
-		ArrayList datos = new ArrayList();
+	if(session.getAttribute(productoKey) == null){	
+		ArrayList datos = new ArrayList();		//ArrayList para definir el orden en el que se agregan los datos de compra 
 		datos.add(0, producto);
 		datos.add(1, precio);
 		datos.add(2, creador);
@@ -29,29 +29,15 @@
 		datos.add(4, descripcion);
 		datos.add(5, 1);
 	
-		session.setAttribute(productoKey, datos);
+		session.setAttribute(productoKey, datos);	//Damos de alta los datos del producto relacionado con el ID del ArrayList
 	}
 	else{
-		ArrayList obtenerTemp = (ArrayList)session.getAttribute(productoKey);
-		int tempCantidad = Integer.parseInt(obtenerTemp.get(5).toString());
-		obtenerTemp.set(5, tempCantidad + 1);
-		session.setAttribute(productoKey, obtenerTemp);
+		ArrayList datosTemporales = (ArrayList)session.getAttribute(productoKey);		//obtenemmos los datos contenidos en la key 
+		int tempCantidad = Integer.parseInt(datosTemporales.get(5).toString());
+		datosTemporales.set(5, tempCantidad + 1);
+		session.setAttribute(productoKey, datosTemporales);
 	}
 	
-	ArrayList mostrar = (ArrayList)session.getAttribute(productoKey);
-	String mProducto = mostrar.get(0).toString();
-	String mPrecio = mostrar.get(1).toString();
-	String mCreador = mostrar.get(2).toString();
-	String mProductor = mostrar.get(3).toString();
-	String mDescripcion = mostrar.get(4).toString();
-	int mCantidad = Integer.parseInt(mostrar.get(5).toString());
-	
-	out.println(mProducto + "<br>");
-	out.println(mDescripcion + "<br>");
-	out.println(mPrecio + "<br>");
-	out.println(mCantidad + "<br>");
-	out.println(mCreador + "<br>");
-	out.println(mProductor + "<br>");
 	response.sendRedirect("Carrito.jsp");
 
 %>

@@ -8,8 +8,11 @@
 <body>
 	<header>
 		<div id="encabezado" class="Encabezado">
-		
-		
+			<table>
+				<td><a href= "index.jsp"> <img alt="logo" src="img/logo.png"> </a></td>
+				<td><center><h1>W o l f S t o r e</h1></center></td>
+			</table>
+			
 		</div>
 	</header>
 	
@@ -27,23 +30,30 @@
 	</nav>
 	
 	<section class="posts">
-		<article class="loggin">
-			<center><h1>Bienvenido a wOlfForce</h1></center>
-			<br>
+		<article class="capturaDatos">
+			<center><br><p>Bienvenido WolfStore</p></center>
 			<br>
 			
-			<br>
 			<form method="POST" action='loggin.jsp' name="iniciar sesion">
-			<center>Correo <input type="text" name="User"/> <br>
-			<br>
-			Contraseña <input type="password" name="password" />
-			<br>
-			<br>
-			<input type="submit" name="login_user" value="Sing in"/>&nbsp;</form></center>
+			<center>
+			<table class="Loggin">
+			<tr>
+			<td>Correo</td><td><input type="text" name="User" required/></td> <br>
+			</tr>
+			<tr>
+			<td> Contraseña</td>
+			<td><input type="password" name="password" required/></td>
+			</tr>
+			<tr>
+			<td>
+			</td>
+			<td>
+			<a HREF="registro.jsp" class="BotonL">Registrar Usuario</A>
+			<input type="submit" class="BotonL" name="login_user" value="Sing in"/>&nbsp;</form></center>
+			</td>
+			</tr>
 			</form>
-			<br>
-			<center><A HREF="registro.jsp">Registrar Usuario</A></center>
-					
+			</table>		
 		</article>
 	</section>
 	

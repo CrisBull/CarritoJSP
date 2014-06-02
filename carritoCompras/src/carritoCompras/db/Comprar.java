@@ -49,23 +49,23 @@ public class Comprar extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		if(session.getAttribute("userID") != null){
-			String to = session.getAttribute("userID").toString();
-			String from = "reporteCompras01@gmail.com";
-			//String host ="localhost";
+			String to = session.getAttribute("userID").toString();	//obtenemos el usuario (correo)
+			String from = "reporteCompras01@gmail.com";				//correo de donde vamos a enviar reporte
 			
+			//Definimos propiedades para enviar correo
 			Properties properties = System.getProperties();
-			properties.setProperty("mail.smtp.user","reporteCompras01@gmail.com");
-			properties.setProperty("mail.smtp.host","smtp.gmail.com");
+			properties.setProperty("mail.smtp.user","reporteCompras01@gmail.com");	//protocolo smtp (usuario)
+			properties.setProperty("mail.smtp.host","smtp.gmail.com");				//protocolo, host
             properties.put("mail.smtp.starttls.enable", "true");//inicializar el servidor
             properties.put("mail.smtp.auth", "true");//autentificacion
 			properties.setProperty("mail.smtp.socketFactory.port", puerto );//activar el puerto
-			properties.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
-			properties.setProperty("mail.smtp.socketFactory.fallback", "false");
+			properties.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");	//protocolo https
+			properties.setProperty("mail.smtp.socketFactory.fallback", "false");					
 		
 			
 
 			   try{
-				   Authenticator auth = new autentificadorSMTP();//autentificar el correo
+				   Authenticator auth = new autentificadorSMTP();//autentificar el correo mediante su clase
 		           Session mailSession = Session.getInstance(properties, auth);//se inica una session
 			      // Create a default MimeMessage object.
 			      MimeMessage message = new MimeMessage(mailSession);
@@ -76,6 +76,7 @@ public class Comprar extends HttpServlet {
 			                               new InternetAddress(to));
 			      // Set Subject: header field
 			      message.setSubject("Reporte de Compras Wolfshop");
+			      
 			      // Now set the actual message
 			      String datosTabla = obtenerDatos(session).toString(); 
 			      message.setText("Buen dia su total de compras es: "+ totalEmail + datosTabla);
@@ -124,7 +125,7 @@ public class Comprar extends HttpServlet {
     
     	for(int i = 0; i < productos.length; i++){
     		obtenerHash =(ArrayList)session.getAttribute(productos[i]);
-    		datosCompras.add(i, obtenerHash);
+    		datosCompras.add(i, obtenerHash);			//obtiene los datos de la key para introducirlos en el arraylist-arrayList
     		totalEmail += Double.parseDouble(obtenerHash.get(1).toString()) * Integer.parseInt(obtenerHash.get(5).toString());
     	}
     	
@@ -135,15 +136,14 @@ public class Comprar extends HttpServlet {
     public void vaciarCarrito(HttpSession session){
     	String user = session.getAttribute("userID").toString();
 		session.removeAttribute("userID");
-		String productos[]= session.getValueNames();
-    	ArrayList  obtenerHash= new ArrayList();
+		String productos[]= session.getValueNames();	//Obtiene los valores de la key
+    	
     
     	for(int i = 0; i < productos.length; i++){
-    		obtenerHash =(ArrayList)session.getAttribute(productos[i]);
-    		session.removeAttribute(productos[i]);
+    		session.removeAttribute(productos[i]);		//recorriendo y los remueve
     	}
     	
-    	session.setAttribute("userID", user);
+    	session.setAttribute("userID", user);	//Recupera el userID
     
     }
 }

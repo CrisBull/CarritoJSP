@@ -11,7 +11,11 @@
 <body>
 	<header>
 		<div id="encabezado" class="Encabezado">
-		
+			<table>
+				<td><a href= "index.jsp"> <img alt="logo" src="img/logo.png"> </a></td>
+				<td><center><h1>W o l f S t o r e</h1></center></td>
+			</table>
+				
 		
 		</div>
 	</header>
@@ -24,7 +28,9 @@
 		<li><a href="Musica.jsp">Musica</a></li>
 		<li><a href="videogames.jsp">Video Games</a></li>
 		<li><a href="Carrito.jsp">Carrito de Compras</a></li>
+		
 		<% 
+		//Definimos si la session esta en curso para desplegar opciones de registro e iniciar sesion
 			if(session.getAttribute("userID") == null){
 				out.print("<li><a href=\"iniciarSesion.html\">Iniciar Session</a></li> ");
 				out.print("<li><a href=\"registro.jsp\">Registrarse</a></li>");
@@ -43,6 +49,8 @@
 		<article class="post">
 		
 		<%
+			//Declara el ArrayList para introducir datos de los articulos agregados al carrito
+			
 			ArrayList reporte = new ArrayList();
 			String mProducto;
 			double mPrecio;
@@ -52,22 +60,23 @@
 			int mCantidad;
 			
 			String user = null;
-			if(session.getAttribute("userID") != null){
-				user = session.getAttribute("userID").toString();
-				session.removeAttribute("userID");
+			if(session.getAttribute("userID") != null){		
+				user = session.getAttribute("userID").toString();	//Obtiene el usuario de la sesion y lo guarda en user
+				session.removeAttribute("userID");					//Remueve el usuario del campo userID
 			}
 		
-			String productos[]= session.getValueNames();
-			double total = 0;
+			String productos[]= session.getValueNames();			//Declacara productos para poder recorrer mi ArrayList
+			double total = 0;										//productos igual a los valores que contenga mi sesion
 			for(int i = 0; i < productos.length; i++){
-				reporte = (ArrayList)session.getAttribute(productos[i]);
+				reporte = (ArrayList)session.getAttribute(productos[i]);	//Obtener datos de mi sesion para introducirlos en  mi ArrayList
 				mProducto = reporte.get(0).toString();
-				mPrecio = Double.parseDouble(reporte.get(1).toString());
+				mPrecio = Double.parseDouble(reporte.get(1).toString());	//casting para poder manipularlos despues
 				mCreador = reporte.get(2).toString();
 				mProductor = reporte.get(3).toString();
 				mDescripcion = reporte.get(4).toString();
-				mCantidad = Integer.parseInt(reporte.get(5).toString());
+				mCantidad = Integer.parseInt(reporte.get(5).toString());	//casting para poder manipularlos despues
 				
+				//imprimen las variables para reporte
 				out.println(mProducto + "<br>");
 				out.println(mPrecio + "<br>");
 				out.println(mCreador + "<br>");
@@ -76,21 +85,20 @@
 				out.println(mCantidad + "<br>");
 				out.println(mCantidad * mPrecio);
 				out.print("<br><br>");
-				total += mCantidad * mPrecio;
+				
+				total += mCantidad * mPrecio;		
 			}
 			
 			out.println("Importe Total: " + total);
 		
-			if(user != null)
-				session.setAttribute("userID", user);
+			if(user != null)		
+				session.setAttribute("userID", user);		//Define el nombre del UserID de acuerdo con el contenido de la variable user 
 		%>
+		
+		<a href="Comprar" class="Carrito"> Comprar</a>		<!-- Envia al servlet Comprar -->
 		</article>
 		
 		
-		<article class="compras" >
-		
-			<a href="Comprar">Comprar</a>
-			</article>
 	</section>
 	
 	<div id="piePagina" class="PiePagina">

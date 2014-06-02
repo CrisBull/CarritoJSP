@@ -1,12 +1,43 @@
 @CHARSET "UTF-8";
 
 .posts{
-	
 	background-color: #748184;
 	width: auto;
 	height: 40em;
 	
 }
+
+.index img
+{
+	margin-top: 5em;	
+	
+}
+.index p
+{
+	font-size: 1.5em;
+}
+.capturaDatos
+{
+	padding-top: 0em;
+	background-color: #748184;
+	width: auto;
+	height: 40em;	
+}
+
+.Encabezado
+{	
+	background-image: url("img/background1.jpg");
+	margin: 0em;
+		
+}
+
+.Encabezado h1
+{
+	color: #ffffff;
+	margin-left: 3em;
+	font-size: 3em;
+}
+
 
 .postsCarrito
 {
@@ -14,19 +45,28 @@
 	width: auto;
 	height: auto;	
 	
-	
-	
 }
 
 body{
+	background-image: url('img/background6.jpg');
+	
 	padding-left: 10%;
 	width: 80%;	
 	
 }
 
+.PiePagina
+{
+	font-weight: bold;
+	color:#FFFFFF;	
+	
+	
+}
+
+
 nav
 {
-	background:#4d585c;
+	background:#9a3318;
 	border-left:15px solid #4d585c;
 	position:relative;
 }
@@ -39,6 +79,7 @@ nav .menu
 	overflow-x:auto;
 	white-space:nowrap;
 	
+	
 }
 
 nav .menu li
@@ -50,7 +91,8 @@ nav .menu li
 }
 nav .menu li a
 {	
-	color:#fff;display:block;
+	color:#ffa5a5;
+	display:inline-block;
 	margin:0 .5em;
 	padding:0 .2em;
 	text-decoration:none;
@@ -73,7 +115,7 @@ nav .menu li a:hover
 	font-size: 1em;
 	margin:0 .5em;
 	padding:0 .5em;
-	margin-left: 1.6em;
+	margin-left: 1.4em;
 }
 
 .Catalogo img{
@@ -81,6 +123,57 @@ nav .menu li a:hover
 	width: 200px;
 	border: 5;
 	border-right:10px solid #4d585c;
+}
+
+.Carrito{
+	text-decoration:none;
+	background-color: #a90637;
+	color:white;
+	font-family:fantasy;
+	margin:.1em;
+	border-color: maroon;
+	border-style:outset;
+	text-shadow: navy;
+	margin-bottom: 2em;
 	
+}
+
+.Carrito:hover{
+	color:  silver;
+	text-decoration:underline;
+	font-style:italic;
+	font-size: .95em;
+	border-style: inset;
+	border-color: #9f9f9f;	
+}
+
+.Mensaje{
+	color:silver;
+}
+
+table.Loggin{
+	font-size: 1.3em;
+	color:silver;
+}
+
+table.Loggin a{
+	font-size: .6em;
+	margin-right: 1em;
+}
+
+.BotonL{
+	text-decoration:none;
+	background-color: #a90637;
+	color:white;
+	font-family:fantasy;
+	margin:.1em;
+	border-color: maroon;
+	border-style:outset;
+	text-shadow: navy;
+	margin-bottom: 2em;
 	
+}
+
+.BotonL:hover{
+	border-style: inset;
 }

@@ -10,8 +10,11 @@
 <body>
 	<header>
 		<div id="encabezado" class="Encabezado">
-		
-		
+			<table>
+				<td><a href= "index.jsp"> <img alt="logo" src="img/logo.png"> </a></td>
+				<td><center><h1>W o l f S t o r e</h1></center></td>
+			</table>
+			
 		</div>
 	</header>
 	
@@ -75,7 +78,7 @@
 	<a href="addCarrito.jsp?productoKey=Musica4&producto=Pueblo Español Barcelona&precio=320&creador=Enrique Bunbury&productor=Sony Music&descripcion=Disco de Musica" class="Carrito">Agregar a Carrito</a>
 
 	</li>
-	
+	<br><br>
 	</ul>
 	</article>
 	</section>		
